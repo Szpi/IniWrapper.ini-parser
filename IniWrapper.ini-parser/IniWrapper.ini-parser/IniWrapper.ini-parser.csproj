@@ -9,12 +9,13 @@
     <RepositoryUrl>https://github.com/Szpi/IniWrapper.ini-parser</RepositoryUrl> 
     <PackageTags>Ini, ini file, configuration, IniWrapper</PackageTags> 
     <PackageLicenseUrl>https://raw.githubusercontent.com/Szpi/IniWrapper.ini-parser/master/LICENSE</PackageLicenseUrl> 
-    <Description>Extension on IniWrapper that uses Ini-parser library to parse ini files.</Description>
+    <Description>Extension on IniWrapper that uses Ini-parser library to parse ini files.</Description> 
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="ini-parser" Version="2.5.2" />
-    <PackageReference Include="IniWrapper" Version="3.1.0" />
+    <PackageReference Include="IniWrapper" Version="*" />
   </ItemGroup>
 
 </Project>
