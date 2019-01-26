@@ -1,5 +1,4 @@
-﻿using System;
-using IniParser;
+﻿using IniParser;
 using IniParser.Model;
 using IniWrapper.ParserWrapper;
 using IniWrapper.Settings;
@@ -10,12 +9,14 @@ namespace IniWrapper.ini_parser
     {
         private readonly IniSettings _iniSettings;
         private readonly IniData _iniSaveData;
+        private readonly FileIniDataParser _fileIniDataParser;
 
         private IniData _iniReadData;
         public IniParserAdapter(IniSettings iniSettings)
         {
             _iniSettings = iniSettings;
             _iniSaveData = new IniData();
+            _fileIniDataParser = new FileIniDataParser();
         }
 
         public string Read(string section, string key)
@@ -27,8 +28,7 @@ namespace IniWrapper.ini_parser
         public void Write(string section, string key, string value)
         {
             _iniSaveData[section][key] = value;
-            var parser = new FileIniDataParser();
-            parser.WriteFile(_iniSettings.IniFilePath, _iniSaveData);
+            _fileIniDataParser.WriteFile(_iniSettings.IniFilePath, _iniSaveData);
         }
 
         private void ReadFromFile()
@@ -38,8 +38,7 @@ namespace IniWrapper.ini_parser
                 return;
             }
 
-            var parser = new FileIniDataParser();
-            _iniReadData = parser.ReadFile(_iniSettings.IniFilePath);
+            _iniReadData = _fileIniDataParser.ReadFile(_iniSettings.IniFilePath);
         }
     }
 }

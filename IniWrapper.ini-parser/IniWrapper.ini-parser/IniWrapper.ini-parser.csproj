@@ -1,8 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <RootNamespace>IniWrapper.ini_parser</RootNamespace>
+    <TargetFrameworks>netstandard2.0;netcoreapp2.0;netcoreapp2.1;net45;net451;net452;net46;net461;net462;net47;net471</TargetFrameworks> 
+    <RootNamespace>IniWrapper.ini_parser</RootNamespace> 
+    <Copyright>2019 Piotr Szkudlarski</Copyright> 
+    <Authors>Piotr Szkudlarski</Authors> 
+    <PackageProjectUrl>https://github.com/Szpi/IniWrapper.ini-parser</PackageProjectUrl> 
+    <RepositoryUrl>https://github.com/Szpi/IniWrapper.ini-parser</RepositoryUrl> 
+    <PackageTags>Ini, ini file, configuration, IniWrapper</PackageTags> 
+    <PackageLicenseUrl>https://raw.githubusercontent.com/Szpi/IniWrapper.ini-parser/master/LICENSE</PackageLicenseUrl> 
+    <Description>Extension on IniWrapper that uses Ini-parser library to parse ini files.</Description>
   </PropertyGroup>
 
   <ItemGroup>

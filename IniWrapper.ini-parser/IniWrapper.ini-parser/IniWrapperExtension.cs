@@ -20,20 +20,5 @@ namespace IniWrapper.ini_parser
 
             return iniWrapperFactory.CreateWithIniParser(settings);
         }
-
-        public static IIniWrapper CreateWithIniParser(this IniWrapperFactory iniWrapperFactory, IniSettings iniSettings)
-        {
-            var parser = new IniParserAdapter(iniSettings);
-            return iniWrapperFactory.Create(iniSettings, parser);
-        }
-
-        public static IIniWrapper CreateWithIniParser(this IniWrapperFactory iniWrapperFactory, Action<IniSettings> iniSettings)
-        {
-            var settings = new IniSettings();
-
-            iniSettings(settings);
-
-            return iniWrapperFactory.CreateWithIniParser(settings);
-        }
     }
 }
